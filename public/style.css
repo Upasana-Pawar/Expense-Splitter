@@ -1,0 +1,98 @@
+/* Modern attractive UI for Expense Splitter (dark theme + accents) */
+
+/* Tokens */
+:root{
+  --bg-1: #0f1724;
+  --card: rgba(255,255,255,0.03);
+  --muted: #9aa6bd;
+  --text: #e6eef8;
+  --accent: #ff6b6b;
+  --accent-2: #42c6b9;
+  --accent-3: #7c3aed;
+  --success: #10b981;
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(3,6,23,0.6);
+  --glass-border: rgba(255,255,255,0.06);
+}
+
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:var(--text); background: linear-gradient(180deg,#071032,#0f1724); -webkit-font-smoothing:antialiased; }
+.app { max-width:1200px; margin:36px auto; padding:22px; }
+
+/* Topbar */
+.topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:20px; }
+.brand { display:flex; align-items:center; gap:12px; }
+.title-main { font-family: 'Poppins', Inter, sans-serif; font-weight:700; font-size:20px; color:var(--text); }
+.title-sub { font-size:12px; color:var(--muted); margin-top:2px; }
+.select-compact { background:transparent; color:var(--text); border:1px solid rgba(255,255,255,0.06); padding:8px 10px; border-radius:10px; min-width:160px; }
+
+/* Grid */
+.grid { display:grid; grid-template-columns: 1fr 1fr 380px; gap:18px; align-items:start; }
+
+/* Panel */
+.panel { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:var(--radius); box-shadow:var(--shadow); border:1px solid var(--glass-border); }
+.panel-head h3 { margin:0; font-family:'Poppins', Inter, sans-serif; font-size:16px; color:var(--text); }
+.muted { color:var(--muted); font-size:13px; margin-top:4px; }
+.small { font-size:11px; }
+
+/* Inputs */
+.input { width:100%; padding:10px 12px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--text); outline:none; transition:all .18s ease; }
+.input:focus { box-shadow: 0 6px 18px rgba(124,58,237,0.12); border-color: rgba(124,58,237,0.8); transform:translateY(-1px); }
+
+/* Forms */
+.row { display:flex; gap:10px; align-items:center; }
+.user-row { margin-bottom:12px; }
+.form-grid { display:grid; grid-template-columns: 1fr 140px; gap:10px; }
+.field { display:flex; flex-direction:column; gap:6px; }
+.field.wide { grid-column: 1 / -1; }
+
+/* Buttons */
+.btn { padding:9px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:600; transition:transform .12s ease, box-shadow .12s ease; }
+.btn-primary { background: linear-gradient(90deg,var(--accent-3),var(--accent)); color:white; box-shadow:0 8px 20px rgba(124,58,237,0.12); }
+.btn-primary:hover { transform:translateY(-3px); box-shadow:0 18px 40px rgba(124,58,237,0.16); }
+.btn-ghost { background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--text); }
+.form-actions { margin-top:10px; display:flex; gap:10px; }
+
+/* Friends list */
+.friends-list { list-style:none; padding:0; margin:6px 0 0 0; display:flex; flex-direction:column; gap:8px; }
+.friends-list li { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.03); }
+.friend-left { display:flex; align-items:center; gap:12px; }
+.id-pill { background: rgba(255,255,255,0.03); color:var(--text); padding:6px 9px; border-radius:999px; font-weight:700; font-size:13px; border:1px solid rgba(255,255,255,0.04); }
+.friend-name { font-weight:600; font-size:14px; }
+.friend-actions button { background:transparent; border:0; color:var(--muted); padding:6px; cursor:pointer; border-radius:8px; transition:background .12s; }
+.friend-actions button:hover { background: rgba(255,255,255,0.02); color:var(--text); }
+
+/* Expenses list */
+.expenses-list { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+.expense-item { padding:12px; border-radius:10px; background: linear-gradient(180deg, rgba(6,11,27,0.35), rgba(10,16,36,0.28)); border:1px solid rgba(255,255,255,0.03); display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.expense-meta { display:flex; flex-direction:column; gap:6px; }
+.expense-title { font-weight:700; }
+.expense-desc { color:var(--muted); font-size:13px; }
+
+/* Balances */
+.balances { display:flex; flex-direction:column; gap:10px; margin-top:6px; }
+.bal-row { display:flex; justify-content:space-between; align-items:center; padding:10px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.03); }
+.badge { padding:6px 10px; border-radius:999px; font-weight:700; font-size:13px; }
+.owed { background: linear-gradient(90deg,#dffaf4,#e8fff9); color: #045e50; }
+.owe { background: linear-gradient(90deg,#fff0f0,#ffefef); color: #8b1f1f; }
+.settled { background: rgba(255,255,255,0.02); color:var(--muted); }
+
+/* Totals and viewing-as label */
+.totals { margin-top:12px; padding:12px; border-radius:10px; background: linear-gradient(180deg, rgba(12,15,22,0.6), rgba(8,10,18,0.55)); border:1px solid rgba(255,255,255,0.03); color:var(--muted); }
+.viewing-as-label { margin-bottom: 10px; padding: 10px 14px; background: linear-gradient(90deg, rgba(124,58,237,0.25), rgba(255,107,107,0.25)); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; font-weight: 600; font-size: 14px; color: #fff; text-align: center; opacity: 0; transform: translateY(-5px); transition: all 0.3s ease; }
+.viewing-as-label.active { opacity: 1; transform: translateY(0); }
+
+/* Footer */
+.foot { text-align:center; margin-top:16px; color:var(--muted); font-size:13px; }
+.heart { color:var(--accent); margin-left:6px; }
+
+/* Responsive */
+@media (max-width:1000px){
+  .grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .panel { padding:14px; }
+}
+
+/* subtle fade-in */
+.app { animation: fadeIn .28s ease both; }
+@keyframes fadeIn { from { opacity:0; transform: translateY(6px);} to { opacity:1; transform:none; } }
